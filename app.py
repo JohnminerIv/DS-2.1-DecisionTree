@@ -76,6 +76,6 @@ def login():
 def register():
     """Page for registering"""
     return render_template('register.html')
-
+application = app
 if __name__ == '__main__':
     app.run(debug=True)
