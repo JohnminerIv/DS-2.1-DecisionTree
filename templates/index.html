@@ -1,37 +1,42 @@
 {% extends 'base.html' %} {% block content %}
 
 <div id="content">
-<div id="carouselExampleControls" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active text-center">
-      <div class="card text-center container">
-        <div class="card-body">
-          <h1 style="font-size: 72px">Decision Trees</h1>
-          <hr class="my-4">
-          <h2>Tree Will be Shown After Upload</h2>
-          <div style="padding-left: 90px; padding-right: 90px;">
+  <div id="carouselExampleControls" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active text-center">
+        <div class="card text-center container">
+          <div class="card-body">
+            <h1 style="font-size: 72px">Decision Trees</h1>
+            <hr class="my-4">
+            <h2>Tree Will be Shown After Upload</h2>
+            <div style="padding-left: 90px; padding-right: 90px;">
               {% if image != '' %}
               <p class="card-text"><img src="{{url_for('static', filename=image)}}" alt="..."></p>
               {% else %}
-              <p class="card-text"><img src="{{url_for('static', filename='img/tree_placeholder.jpg')}}" align="middle" /></p>
+              <p class="card-text"><img src="{{url_for('static', filename='img/tree_placeholder.jpg')}}"
+                  align="middle" /></p>
               {% endif %}
-          </div>
-          <hr class="my-4">
-          <h2>Purpose of this WebApp?</h2>
-          <div style="padding-left: 90px; padding-right: 90px;">
-            <p class="card-text">Visualize a decision tree dataset using csv. Please have the target as the last column.</p>
-            <form action="/build" method="post" enctype="multipart/form-data">
+            </div>
+            <hr class="my-4">
+            <h2>Purpose of this WebApp?</h2>
+            <div style="padding-left: 90px; padding-right: 90px;">
+              <p class="card-text">Visualize a decision tree dataset using csv. Please have the target as the last
+                column.</p>
+              <form action="/build" method="post" enctype="multipart/form-data">
                 Select Dataset to Upload:
                 <input type="file" name="fileToUpload" id="fileToUpload">
                 <input type="submit" value="Upload Dataset" name="submit">
-            </form></div>
+              </form>
+            </div>
             Or build an interactive tree by uploading here
             <form action="/interactive" method="post" enctype="multipart/form-data">
-                Select Dataset to Upload:
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Upload Dataset" name="submit">
-            </form></div>
-          <a href="https://github.com/soundreaper/DS-2.1-DecisionTree" target="_blank" style="font-size: 24px">View Code on GitHub</a>
+              Select Dataset to Upload:
+              <input type="file" name="fileToUpload" id="fileToUpload">
+              <input type="submit" value="Upload Dataset" name="submit">
+            </form>
+          </div>
+          <a href="https://github.com/JohnminerIv/DS-2.1-DecisionTree" target="_blank" style="font-size: 24px">View Code
+            on GitHub</a>
         </div>
       </div>
     </div>
