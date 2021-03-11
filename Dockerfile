@@ -1,10 +1,10 @@
 FROM python:3.7-slim-buster
 
-ADD requirements.txt /app
+COPY requirements.txt /app
 
 RUN python3 -m pip install -r /app/requirements.txt
 
-ADD . /app
+COPY . /app
 
 WORKDIR /app
 
