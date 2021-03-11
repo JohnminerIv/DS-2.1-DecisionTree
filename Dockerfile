@@ -1,12 +1,12 @@
 FROM python:3.7-slim-buster
 
-COPY requirements.txt /app
+WORKDIR /usr/src/app
 
-RUN python3 -m pip install -r /app/requirements.txt
+COPY requirements.txt ./
 
-COPY . /app
+RUN python3 -m pip install -r requirements.txt
 
-WORKDIR /app
+COPY . .
 
 EXPOSE 8000
 
